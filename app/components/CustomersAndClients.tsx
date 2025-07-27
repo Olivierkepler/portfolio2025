@@ -35,7 +35,7 @@ export default function CustomersAndClients() {
       <div className="w-full max-w-6xl mx-auto h-[1px]  bg-gradient-to-r from-transparent via-slate-500 to-transparent mb-16" />
 
       <div className="grid grid-cols-2 md:grid-cols-4 gap-10 items-center justify-center max-w-6xl mx-auto">
-        {clients.map((client, idx) => (
+        {clients.map((client) => (
           <motion.a
             key={client.name}
             href={client.link}
