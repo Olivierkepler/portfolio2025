@@ -3,6 +3,7 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Quote } from "lucide-react";
+import Image from "next/image";
 
 const testimonials = [
   {
@@ -75,9 +76,11 @@ export default function Testimonials() {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.3 }}
         >
-          <img
+          <Image
             src={image}
             alt={name}
+            width={96}
+            height={96}
             className="w-20 h-20 md:w-24 md:h-24 rounded-full object-cover border-4 border-green-500 shadow-xl"
           />
           <div className="text-left">

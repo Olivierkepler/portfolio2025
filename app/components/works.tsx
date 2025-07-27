@@ -1,13 +1,14 @@
 "use client";
 
-import { useState, useRef } from "react";
-import { motion, useInView } from "framer-motion";
+import { useState } from "react";
+import { motion } from "framer-motion";
 
 interface Work {
   title: string;
   description: string;
   link?: string;
   image?: string;
+  
 }
 
 export default function Works() {
@@ -64,18 +65,12 @@ export default function Works() {
 
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
         {works.map((work, index) => {
-          const ref = useRef(null);
-          const isInView = useInView(ref, {
-            once: false,
-            margin: "0px 0px -100px 0px",
-          });
-
           return (
             <motion.div
               key={index}
-              ref={ref}
               initial={{ opacity: 0, y: 60 }}
-              animate={isInView ? { opacity: 1, y: 0 } : {}}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: false, amount: 0.3 }}
               transition={{ duration: 0.6, delay: index * 0.1 }}
               whileHover={{ scale: 1.03, rotate: [0, 1, -1, 0], transition: { duration: 0.5 } }}
               className="relative rounded-3xl overflow-hidden group shadow-xl bg-gradient-to-br from-[#1a1a1d] to-[#0c0c0e] border border-gray-800 hover:border-emerald-400 backdrop-blur-md transition-all duration-300"

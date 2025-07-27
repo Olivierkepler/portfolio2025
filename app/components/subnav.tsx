@@ -20,8 +20,8 @@ const dropdownData = [
 ];
 
 export default function SubNav() {
-  const [openDropdown, setOpenDropdown] = useState(null);
-  const [activeTab, setActiveTab] = useState(null);
+  const [openDropdown, setOpenDropdown] = useState<number | null>(null);
+  const [activeTab, setActiveTab] = useState<string | null>(null);
   const [isVisible, setIsVisible] = useState(false);
   const [lastScrollY, setLastScrollY] = useState(0);
 
@@ -54,11 +54,11 @@ export default function SubNav() {
           className="w-full flex justify-center py-4 bg-black text-white z-40 fixed top-[60px]"
         >
           <ul className="flex gap-10 relative">
-            {dropdownData.map((menu, index) => (
+            {dropdownData.map((menu, index: number) => (
               <li
                 key={index}
                 className="relative group cursor-pointer"
-                onMouseEnter={() => setOpenDropdown(index as any)}
+                onMouseEnter={() => setOpenDropdown(index)}
                 onMouseLeave={() => setOpenDropdown(null)}
               >
                 <div className="flex items-center gap-1">
@@ -80,7 +80,7 @@ export default function SubNav() {
                           className={`px-3 py-1.5 text-sm rounded hover:bg-green-700/30 transition-all cursor-pointer ${
                             activeTab === tab ? "text-green-400" : "text-white"
                           }`}
-                          onClick={() => setActiveTab(tab as any)}
+                          onClick={() => setActiveTab(tab)}
                         >
                           {tab}
                         </li>

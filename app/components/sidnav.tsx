@@ -24,18 +24,7 @@ const navItems = [
   { id: "blog", label: "Blog", icon: BookOpenIcon },
 ];
 
-const navVariants = {
-  hidden: { opacity: 0, x: -20 },
-  visible: (i: number) => ({
-    opacity: 1,
-    x: 0,
-    transition: {
-      delay: i * 0.1,
-      duration: 0.5,
-      ease: "easeOut",
-    },
-  }),
-};
+
 
 export default function SideNav() {
   const [active, setActive] = useState("header");
@@ -130,7 +119,7 @@ export default function SideNav() {
             transition={{ duration: 0.3 }}
             className="fixed top-0 left-0 h-full w-64 bg-gray-900 border-r border-gray-700 z-40 p-6 md:hidden"
           >
-            {navItems.map((item, i) => (
+            {navItems.map((item) => (
               <motion.div key={item.id} className="mb-4">
                 <Link
                   href={`#${item.id}`}
@@ -142,6 +131,7 @@ export default function SideNav() {
                   <item.icon className="w-5 h-5" />
                   {item.label}
                 </Link>
+                
               </motion.div>
             ))}
           </motion.div>

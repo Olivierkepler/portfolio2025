@@ -3,10 +3,8 @@
 import { useState } from "react";
 import Education from "./experience/education";
 import Professional from "./experience/professional";
-import { div } from "framer-motion/client";
 import Skills from "./experience/skill";
 import Interview from "./experience/interview";        
-
 
 const tabs = ["Education", "Professional", "Skills", "Interview"];
 

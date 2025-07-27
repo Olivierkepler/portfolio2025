@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Code, Layers, Wrench, Sparkles, Sparkle } from "lucide-react"; 
+import { Code, Layers, Wrench, Sparkle } from "lucide-react"; 
 
 
 const skills = [
@@ -27,18 +27,7 @@ const skills = [
   },
 ];
 
-const fadeInUp = {
-  hidden: { opacity: 0, y: 30 },
-  visible: (i: number) => ({
-    opacity: 1,
-    y: 0,
-    transition: {
-      delay: i * 0.15,
-      duration: 0.6,
-      ease: "easeOut",
-    },
-  }),
-};
+
 
 export default function Skills() {
   return (
